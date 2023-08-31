@@ -1,0 +1,122 @@
+{
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "Debug",
+            "id": "3f7dffff-9996-4dc9-b7bf-389cc0a05482",
+            "actions": [
+                {
+                    "name": "Fall",
+                    "type": "Button",
+                    "id": "66e56639-3a1b-4c75-b4a8-0bb3c0f9667c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveLeft",
+                    "type": "Button",
+                    "id": "c05df781-2fbd-4a6a-b504-503572173728",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveRight",
+                    "type": "Button",
+                    "id": "781df362-22a7-493c-b3c5-76d8f7f93fcd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NextSign",
+                    "type": "Button",
+                    "id": "0b7381ae-58d5-41b0-83cc-aac9c1df89c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d750c3f3-1efc-44ce-9b52-c2100f8c7b6d",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f67b6f43-5fda-41cd-a783-d3a34c464a25",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e40b1230-9738-4c9d-9e1f-53fa18d67673",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc2a34c4-345a-46cc-9443-30692c3c24fb",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextSign",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Touch",
+            "id": "9bd6ef81-05c9-4621-8445-80a575fec457",
+            "actions": [
+                {
+                    "name": "PrimaryTouch",
+                    "type": "PassThrough",
+                    "id": "e93dd8f0-8c0f-4f64-b33b-3d3c6c3a5522",
+                    "expectedControlType": "Touch",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c52ce380-44f5-4573-9161-468d3894f1a1",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryTouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
