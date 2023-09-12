@@ -52,5 +52,5 @@
     "Temp/": true
   },
   "dotnet.defaultSolution": "Mathris.sln",
-  "cSpell.words": ["Tetromino", "Tilemaps"]
+  "cSpell.words": ["Raycast", "Rigidbody", "Scriptable", "Tetromino", "tetrominoes", "tilemap", "Tilemaps"]
 }
