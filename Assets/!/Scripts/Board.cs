@@ -7,8 +7,8 @@ public class Board : MonoBehaviour
     public List<Tetromino> tetrominoes;
     public Tilemap tilemap;
     public Vector2Int initialPosition;
-    private Tetromino tetromino;
-    private Vector2Int currentPosition;
+    public Tetromino tetromino;
+    public Vector2Int currentPosition;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class Board : MonoBehaviour
         Spawn(currentPosition);
     }
 
-    void Spawn(Vector2Int position) =>
+    public void Spawn(Vector2Int position) =>
         tetromino.cells.ForEach(cell =>
         tilemap.SetTile(new Vector3Int(cell.x + position.x, cell.y + position.y, 0), tetromino.tile)
         );
