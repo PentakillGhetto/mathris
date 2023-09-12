@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+
 public class SwipeEventEmitter : MonoBehaviour
 {
     [SerializeField] private UnityEvent onSwipeLeft;
@@ -27,7 +28,7 @@ public class SwipeEventEmitter : MonoBehaviour
             var swipeDirection = (state.position - currentPosition).normalized;
             // Normalize the result
             var normalizedSwipeDirection = swipeDirection.normalized;
-            // Get 0-36- angle from normalized vector
+            // Get 0-360 angle from normalized vector
             var angle = Vector2.zero.AngleTo(normalizedSwipeDirection);
             // We then divide a circle in 4 parts, that represent spaces as follows:
             // Left: 225deg to 135deg
@@ -42,7 +43,7 @@ public class SwipeEventEmitter : MonoBehaviour
             {
                 onSwipeUp?.Invoke();
             }
-            if (angle < 45 && angle > 315)
+            if (angle < 45 || angle > 315)
             {
                 onSwipeRight?.Invoke();
             }
