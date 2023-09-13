@@ -24,17 +24,31 @@ public class Board : MonoBehaviour
         tilemap.SetTile(new Vector3Int(cell.x + position.x, cell.y + position.y, 0), tetromino.tile)
         );
 
+    public void Clear()
+    {
+        tetromino.cells.ForEach(cell =>
+        tilemap.SetTile(new Vector3Int(cell.x + currentPosition.x, cell.y + currentPosition.y, 0), null)
+        );
+    }
+
     public bool IsValidMove(Vector2Int position) =>
         tetromino.cells.TrueForAll(cell =>
+    !tilemap.HasTile(new Vector3Int(cell.x + position.x, cell.y + position.y, 0)) &&
         new RectInt(new Vector2Int(-this.size.x / 2, -this.size.y / 2), this.size).Contains(cell + position));
-    // !tilemap.HasTile(new Vector3Int(cell.x + position.x, cell.y + position.y, 0)) && 
-    void Move(Vector2Int translation)
-    {
-        if (!IsValidMove(currentPosition + translation)) return;
 
-        tilemap.ClearAllTiles();
-        currentPosition += translation;
+    bool Move(Vector2Int translation)
+    {
+        bool isMoved = false;
+        Clear();
+
+        if (IsValidMove(currentPosition + translation))
+        {
+            currentPosition += translation;
+            isMoved = true;
+        }
+
         Spawn(currentPosition);
+        return isMoved;
     }
 
 
@@ -48,11 +62,6 @@ public class Board : MonoBehaviour
         Move(Vector2Int.right);
     }
 
-
-    public void HandleNextSign()
-    {
-        Move(Vector2Int.up);
-    }
 
     public void HandleFall()
     {
