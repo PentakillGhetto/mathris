@@ -33,9 +33,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "NextSign",
+                    "name": "HardFall",
                     "type": "Button",
-                    "id": "0b7381ae-58d5-41b0-83cc-aac9c1df89c0",
+                    "id": "7041f779-6053-4a9e-8a90-4db84b106a3a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotateRight",
+                    "type": "Button",
+                    "id": "b6aa09ba-ec5f-4238-a746-82a542daba26",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotateLeft",
+                    "type": "Button",
+                    "id": "870565d0-01a1-4546-ad31-4190b9727050",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -78,12 +96,34 @@
                 },
                 {
                     "name": "",
-                    "id": "cc2a34c4-345a-46cc-9443-30692c3c24fb",
-                    "path": "<Keyboard>/upArrow",
+                    "id": "b0d4a8bd-f98c-44bc-bda7-e3b6d287c022",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "NextSign",
+                    "action": "HardFall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e345fe0-2bbe-4585-b975-635362d44d08",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "97720a80-b50e-402b-ae38-146f7d23339b",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

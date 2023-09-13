@@ -108,22 +108,6 @@ MonoBehaviour:
     m_ActionName: In-Game/MoveRight[/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Board, GameAssembly
-        m_MethodName: HandleNextSign
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 0b7381ae-58d5-41b0-83cc-aac9c1df89c0
-    m_ActionName: In-Game/NextSign[/Keyboard/upArrow]
-  - m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1600861804491453878}
         m_TargetAssemblyTypeName: SwipeEventEmitter, Assembly-CSharp
         m_MethodName: HandleTouch
@@ -138,6 +122,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e93dd8f0-8c0f-4f64-b33b-3d3c6c3a5522
     m_ActionName: Touch/PrimaryTouch
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Board, GameAssembly
+        m_MethodName: HandleHardFall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7041f779-6053-4a9e-8a90-4db84b106a3a
+    m_ActionName: Debug/HardFall[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Board, GameAssembly
+        m_MethodName: HandleRotateRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b6aa09ba-ec5f-4238-a746-82a542daba26
+    m_ActionName: Debug/RotateRight[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Board, GameAssembly
+        m_MethodName: HandleRotateRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 870565d0-01a1-4546-ad31-4190b9727050
+    m_ActionName: Debug/RotateLeft[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Debug
@@ -172,19 +204,7 @@ MonoBehaviour:
         m_CallState: 2
   onSwipeUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Board, Assembly-CSharp
-        m_MethodName: HandleNextSign
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onSwipeRight:
     m_PersistentCalls:
       m_Calls:

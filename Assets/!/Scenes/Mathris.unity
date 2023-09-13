@@ -247,11 +247,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 504963360}
     - target: {fileID: 122465040005906003, guid: 2ac94737c2f54d54b80fc1751d6a481f, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 504963360}
-    - target: {fileID: 1600861804491453878, guid: 2ac94737c2f54d54b80fc1751d6a481f, type: 3}
-      propertyPath: onSwipeUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 122465040005906003, guid: 2ac94737c2f54d54b80fc1751d6a481f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 504963360}
+    - target: {fileID: 122465040005906003, guid: 2ac94737c2f54d54b80fc1751d6a481f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 504963360}
     - target: {fileID: 1600861804491453878, guid: 2ac94737c2f54d54b80fc1751d6a481f, type: 3}

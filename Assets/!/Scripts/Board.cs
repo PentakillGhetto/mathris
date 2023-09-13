@@ -67,4 +67,20 @@ public class Board : MonoBehaviour
     {
         Move(Vector2Int.down);
     }
+
+    public void HandleHardFall()
+    {
+        while (Move(Vector2Int.down))
+        {
+            continue;
+        }
+    }
+
+    public void HandleRotateRight()
+    {
+    }
+
+    public void HandleRotateLeft()
+    {
+    }
 }
