@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: L
   m_EditorClassIdentifier: 
   cells:
-  - {x: 1, y: 1}
-  - {x: -1, y: 0}
-  - {x: 0, y: 0}
-  - {x: 1, y: 0}
+  - {x: 1, y: 1, z: 0}
+  - {x: -1, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
   tile: {fileID: 11400000, guid: 389d20cdb06ad9e45a68ee59c664d8a5, type: 2}
