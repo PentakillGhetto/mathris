@@ -61,9 +61,9 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameInputActionsHandler, Assembly-CSharp
+        m_TargetAssemblyTypeName: Board, GameAssembly
         m_MethodName: HandleFall
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -77,9 +77,9 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameInputActionsHandler, Assembly-CSharp
+        m_TargetAssemblyTypeName: Board, GameAssembly
         m_MethodName: HandleMoveLeft
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -93,9 +93,9 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameInputActionsHandler, Assembly-CSharp
+        m_TargetAssemblyTypeName: Board, GameAssembly
         m_MethodName: HandleMoveRight
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -109,9 +109,9 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameInputActionsHandler, Assembly-CSharp
+        m_TargetAssemblyTypeName: Board, GameAssembly
         m_MethodName: HandleNextSign
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -140,7 +140,7 @@ MonoBehaviour:
     m_ActionName: Touch/PrimaryTouch
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Touch
+  m_DefaultActionMap: Debug
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1600861804491453878
@@ -159,7 +159,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameInputActionsHandler, Assembly-CSharp
+        m_TargetAssemblyTypeName: Board, Assembly-CSharp
         m_MethodName: HandleMoveLeft
         m_Mode: 1
         m_Arguments:
@@ -174,7 +174,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameInputActionsHandler, Assembly-CSharp
+        m_TargetAssemblyTypeName: Board, Assembly-CSharp
         m_MethodName: HandleNextSign
         m_Mode: 1
         m_Arguments:
@@ -189,7 +189,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameInputActionsHandler, Assembly-CSharp
+        m_TargetAssemblyTypeName: Board, Assembly-CSharp
         m_MethodName: HandleMoveRight
         m_Mode: 1
         m_Arguments:
@@ -204,7 +204,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameInputActionsHandler, Assembly-CSharp
+        m_TargetAssemblyTypeName: Board, Assembly-CSharp
         m_MethodName: HandleFall
         m_Mode: 1
         m_Arguments:
