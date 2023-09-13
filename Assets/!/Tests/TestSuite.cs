@@ -16,7 +16,7 @@ public class TestSuite
             Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/!/Prefabs/Board.prefab"));
         board = gameGameObject.GetComponent<Board>();
         yield return new WaitForSeconds(0.1f);
-        board.Spawn(Vector2Int.zero);
+        board.Spawn();
         Vector2Int initialPos = board.currentPosition;
         Vector2Int expectedPos = initialPos + Vector2Int.left;
         board.HandleMoveLeft();
