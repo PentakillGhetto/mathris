@@ -17,7 +17,7 @@ public class TestSuite
                     Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/!/Prefabs/Board.prefab"));
         board = gameGameObject.GetComponent<Board>();
         yield return new WaitForSeconds(0.1f);
-        board.Spawn(Vector2Int.zero);
+        board.Spawn();
     }
 
     [TearDown]
