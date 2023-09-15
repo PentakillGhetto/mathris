@@ -20,6 +20,7 @@ public class Board : MonoBehaviour
         currentRotationIndex = 0;
         bounds = new RectInt(new Vector2Int(-size.x / 2, -size.y / 2), size);
         tetromino = tetrominoes[Random.Range(0, tetrominoes.Count)];
+        // tetromino = tetrominoes[2];
         currentPositions = new List<Vector2Int>(tetromino.cells);
         UpdateCurrentPositions(currentPosition);
         Spawn();
@@ -30,7 +31,7 @@ public class Board : MonoBehaviour
     tilemap.SetTile(position.ToVector3Int(), tetromino.tile)
     );
 
-    private void UpdateCurrentPositions(Vector2Int translation)
+    public void UpdateCurrentPositions(Vector2Int translation)
     {
         for (int i = 0; i < currentPositions.Count; i++)
         {
