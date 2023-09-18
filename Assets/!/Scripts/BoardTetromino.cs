@@ -11,8 +11,6 @@ public class BoardTetromino : MonoBehaviour
     public List<Vector2Int> Positions { get; private set; }
     public Vector2Int Position { get; private set; }
     public int rotationIndex;
-
-    // public List<Vector2Int> Cells => tetromino.cells;
     public Tile Tile => Tetromino.tile;
     public float PivotOffset => Tetromino.pivotOffset;
 
@@ -42,30 +40,29 @@ public class BoardTetromino : MonoBehaviour
     public void Rotate(int direction)
     {
         rotationIndex = Wrap(rotationIndex + direction, 0, 4);
-
-        List<Vector2Int> newPositions = new(Positions);
-
-        for (int i = 0; i < Positions.Count; i++)
+        // 1. Convert current cell position to float Vector2
+        // 2. Subtract current position from cell position (move tetromino to x=0,y=0); it's required for the correct rotation
+        // 3. Rotate current position with rotation matrix
+        // 4. Move rotated tetromino back to its original place
+        Positions = Positions.Select(cell => new Vector2(cell.x, cell.y) - Position).Select(cell =>
         {
-            var cell = Positions[i] - Position;
-
+            // I and O tetrominoes have their pivot located differently which is 0.5 to the left in X axis, 0 otherwise
+            cell.x += PivotOffset;
+            cell.y += PivotOffset;
             int x, y;
-
-            x = Mathf.RoundToInt((cell.x * Data.RotationMatrix[0] * direction) + (cell.y * Data.RotationMatrix[1] * direction));
-            y = Mathf.RoundToInt((cell.x * Data.RotationMatrix[2] * direction) + (cell.y * Data.RotationMatrix[3] * direction));
-
-            newPositions[i] = new Vector2Int(x, y) + Position;
-        }
-        Positions = newPositions;
-        // Positions = Tetromino.cells.Select(cell => new Vector2(cell.x, cell.y)).Select(cell =>
-        // {
-        //     // cell.x += PivotOffset;
-        //     // cell.y += PivotOffset;
-        //     int x = Mathf.RoundToInt((cell.x * Data.RotationMatrix[0] * direction) + (cell.y * Data.RotationMatrix[1] * direction));
-        //     int y = Mathf.RoundToInt((cell.x * Data.RotationMatrix[2] * direction) + (cell.y * Data.RotationMatrix[3] * direction));
-        //     return new Vector2Int(x, y);
-        // }).ToList();
-        // }).Select(cell => cell += Position).ToList();
+            // if tetromino is either I or O
+            if (PivotOffset != 0)
+            {
+                x = Mathf.CeilToInt((cell.x * Data.RotationMatrix[0] * direction) + (cell.y * Data.RotationMatrix[1] * direction));
+                y = Mathf.CeilToInt((cell.x * Data.RotationMatrix[2] * direction) + (cell.y * Data.RotationMatrix[3] * direction));
+            }
+            else
+            {
+                x = Mathf.RoundToInt((cell.x * Data.RotationMatrix[0] * direction) + (cell.y * Data.RotationMatrix[1] * direction));
+                y = Mathf.RoundToInt((cell.x * Data.RotationMatrix[2] * direction) + (cell.y * Data.RotationMatrix[3] * direction));
+            }
+            return new Vector2Int(x, y);
+        }).Select(cell => cell += Position).ToList();
     }
 
     /// <summary>
