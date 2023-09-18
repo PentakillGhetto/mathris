@@ -9,7 +9,7 @@ public class BoardTetromino : MonoBehaviour
 {
     public Tetromino Tetromino { get; private set; }
     public List<Vector2Int> Positions { get; private set; }
-    public Vector2Int Position { get; private set; }
+    public Vector2Int Position { get; set; }
     public int rotationIndex;
     public Tile Tile => Tetromino.tile;
     public float PivotOffset => Tetromino.pivotOffset;
