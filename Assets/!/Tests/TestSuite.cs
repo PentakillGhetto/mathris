@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
@@ -17,7 +15,7 @@ public class TestSuite
                     Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/!/Prefabs/Board.prefab"));
         board = gameGameObject.GetComponent<Board>();
         yield return new WaitForSeconds(0.1f);
-        board.Spawn();
+        board.Paint();
     }
 
     [TearDown]
@@ -29,20 +27,18 @@ public class TestSuite
     [Test]
     public void TetraMoveLeft()
     {
-        Vector2Int initialPos = board.currentPosition;
+        Vector2Int initialPos = board.boardTetromino.Position;
         Vector2Int expectedPos = initialPos + Vector2Int.left;
         board.HandleMoveLeft();
-        Assert.AreEqual(expectedPos, board.currentPosition);
+        Assert.AreEqual(expectedPos, board.boardTetromino.Position);
     }
 
     [Test]
     public void TetraMoveRight()
     {
-        Vector2Int initialPos = board.currentPosition;
+        Vector2Int initialPos = board.boardTetromino.Position;
         Vector2Int expectedPos = initialPos + Vector2Int.right;
         board.HandleMoveRight();
-        Assert.AreEqual(expectedPos, board.currentPosition);
+        Assert.AreEqual(expectedPos, board.boardTetromino.Position);
     }
-
-
 }
