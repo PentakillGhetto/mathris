@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
@@ -10,14 +8,15 @@ public class TestSuite
 {
     private Board board;
 
-    [UnitySetUp]
-    public IEnumerator Setup()
+    [SetUp]
+    public void Setup()
     {
         GameObject gameGameObject =
                     Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/!/Prefabs/Board.prefab"));
         board = gameGameObject.GetComponent<Board>();
-        yield return new WaitForSeconds(0.1f);
-        board.Spawn();
+        board.bounds = new RectInt(new Vector2Int(-board.size.x / 2, -board.size.y / 2), board.size);
+        board.boardTetromino.Initialize(board.tetrominoes[Random.Range(0, board.tetrominoes.Count)], board.initialPosition);
+        board.Paint();
     }
 
     [TearDown]
@@ -29,20 +28,18 @@ public class TestSuite
     [Test]
     public void TetraMoveLeft()
     {
-        Vector2Int initialPos = board.currentPosition;
-        Vector2Int expectedPos = initialPos + Vector2Int.left;
+        Vector2Int initialPosition = board.boardTetromino.Position;
+        Vector2Int expectedPosition = initialPosition + Vector2Int.left;
         board.HandleMoveLeft();
-        Assert.AreEqual(expectedPos, board.currentPosition);
+        Assert.AreEqual(expectedPosition, board.boardTetromino.Position);
     }
 
     [Test]
     public void TetraMoveRight()
     {
-        Vector2Int initialPos = board.currentPosition;
-        Vector2Int expectedPos = initialPos + Vector2Int.right;
+        Vector2Int initialPosition = board.boardTetromino.Position;
+        Vector2Int expectedPosition = initialPosition + Vector2Int.right;
         board.HandleMoveRight();
-        Assert.AreEqual(expectedPos, board.currentPosition);
+        Assert.AreEqual(expectedPosition, board.boardTetromino.Position);
     }
-
-
 }
