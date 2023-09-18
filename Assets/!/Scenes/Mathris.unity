@@ -802,6 +802,17 @@ Transform:
   - {fileID: 1332942711}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608001332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6020954826110940122, guid: b0571267329f6e54491a4f2f912c790e, type: 3}
+  m_PrefabInstance: {fileID: 437305617621379383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042450ba8fb19fa4ab423f9de5eedd5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &437305617621379383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -853,6 +864,18 @@ PrefabInstance:
     - target: {fileID: 5091127333537962983, guid: b0571267329f6e54491a4f2f912c790e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170355588059955766, guid: b0571267329f6e54491a4f2f912c790e, type: 3}
+      propertyPath: boardTetromino
+      value: 
+      objectReference: {fileID: 1608001332}
+    - target: {fileID: 8170355588059955766, guid: b0571267329f6e54491a4f2f912c790e, type: 3}
+      propertyPath: currentPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170355588059955766, guid: b0571267329f6e54491a4f2f912c790e, type: 3}
+      propertyPath: currentPosition.y
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
