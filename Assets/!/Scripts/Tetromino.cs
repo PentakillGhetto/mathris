@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class Tetromino : ScriptableObject
 {
     public List<Vector2Int> cells;
+    public Array2D<Vector2Int> wallKicks;
     public Tile tile;
     public float pivotOffset;
 }

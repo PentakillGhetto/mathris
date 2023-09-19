@@ -21,17 +21,17 @@ public class Board : MonoBehaviour
 
     public void Paint() =>
         boardTetromino.Positions.ForEach(position =>
-    tilemap.SetTile(position.ToVector3Int(), boardTetromino.Tile)
+            tilemap.SetTile(position.ToVector3Int(), boardTetromino.Tile)
     );
 
     public void Clear() =>
         boardTetromino.Positions.ForEach(position =>
-        tilemap.SetTile(position.ToVector3Int(), null)
+            tilemap.SetTile(position.ToVector3Int(), null)
         );
 
     public bool IsValidMove(Vector2Int translation) =>
         boardTetromino.Positions.TrueForAll(position =>
-        !tilemap.HasTile((position + translation).ToVector3Int()) && bounds.Contains(position + translation));
+            !tilemap.HasTile((position + translation).ToVector3Int()) && bounds.Contains(position + translation));
 
     public bool Move(Vector2Int translation)
     {
@@ -42,6 +42,36 @@ public class Board : MonoBehaviour
             isMoved = true;
         }
         return isMoved;
+    }
+
+
+    public bool TestWallKicks(int rotationIndex, int rotationDirection)
+    {
+        int wallKickIndex = GetWallKickIndex(rotationIndex, rotationDirection);
+
+        for (int i = 0; i < boardTetromino.WallKicks.Get_X_Length; i++)
+        {
+            Vector2Int translation = boardTetromino.WallKicks[i, wallKickIndex];
+
+            if (Move(translation))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public int GetWallKickIndex(int rotationIndex, int rotationDirection)
+    {
+        int wallKickIndex = rotationIndex * 2;
+
+        if (rotationDirection < 0)
+        {
+            wallKickIndex--;
+        }
+
+        return Utils.Wrap(wallKickIndex, 0, boardTetromino.WallKicks.Get_Y_Length);
     }
 
     public void HandleMoveLeft()
@@ -80,6 +110,7 @@ public class Board : MonoBehaviour
     {
         Clear();
         boardTetromino.Rotate(1);
+        TestWallKicks(boardTetromino.rotationIndex, 1);
         Paint();
     }
 
@@ -87,6 +118,7 @@ public class Board : MonoBehaviour
     {
         Clear();
         boardTetromino.Rotate(-1);
+        TestWallKicks(boardTetromino.rotationIndex, -1);
         Paint();
     }
 }

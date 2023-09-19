@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
 
 public class BoardTetromino : MonoBehaviour
 {
@@ -13,15 +11,11 @@ public class BoardTetromino : MonoBehaviour
     public int rotationIndex;
     public Tile Tile => Tetromino.tile;
     public float PivotOffset => Tetromino.pivotOffset;
+    public Array2D<Vector2Int> WallKicks => Tetromino.wallKicks;
 
     void Start()
     {
         rotationIndex = 0;
-    }
-
-    public void Initialize(Tetromino tetromino)
-    {
-        Initialize(tetromino, Vector2Int.zero);
     }
 
     public void Initialize(Tetromino tetromino, Vector2Int position)
@@ -39,7 +33,7 @@ public class BoardTetromino : MonoBehaviour
 
     public void Rotate(int direction)
     {
-        rotationIndex = Wrap(rotationIndex + direction, 0, 4);
+        rotationIndex = Utils.Wrap(rotationIndex + direction, 0, 4);
         // 1. Convert current cell position to float Vector2
         // 2. Subtract current position from cell position (move tetromino to x=0,y=0); it's required for the correct rotation
         // 3. Rotate current position with rotation matrix
@@ -64,15 +58,4 @@ public class BoardTetromino : MonoBehaviour
             return new Vector2Int(x, y);
         }).Select(cell => cell += Position).ToList();
     }
-
-    /// <summary>
-    /// Puts value between min and max inclusively
-    /// </summary>
-    /// <param name="value"></param>
-    /// <param name="min">Lower bound</param>
-    /// <param name="max">Higher bound</param>
-    /// <returns>Min if value is bigger than max, max if value is less than min, value otherwise</returns>
-    public int Wrap(int value, int min, int max) => value < min ?
-    max - (min - value) % (max + min) :
-         min + (value - min) % (max - min);
 }
